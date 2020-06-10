@@ -7,7 +7,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-import { CadastroAlunoPage } from '../pages/cadastro-aluno/cadastro-aluno';
 import { LoginProvider } from '../providers/login/login';
 import { AlunosProvider } from '../providers/alunos/alunos';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,8 +17,7 @@ import { MapaPage } from '../pages/mapa/mapa';
   declarations: [
     MyApp,
     HomePage,
-    LoginPage,
-    CadastroAlunoPage,
+    LoginPage,    
     MapaPage
   ],
   imports: [
@@ -32,7 +30,6 @@ import { MapaPage } from '../pages/mapa/mapa';
     MyApp,
     HomePage,
     LoginPage,
-    CadastroAlunoPage,
     MapaPage
   ],
   providers: [

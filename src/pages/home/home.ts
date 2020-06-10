@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
-import { CadastroAlunoPage } from '../cadastro-aluno/cadastro-aluno';
 import { AlunosProvider } from '../../providers/alunos/alunos';
 import { MapaPage } from '../mapa/mapa';
 
@@ -25,17 +24,7 @@ export class HomePage {
       this.alunos = alunos;
     })
   }
-
-
-  openCadastro() {
-    let modal = this.modalCtrl.create(CadastroAlunoPage);
-    modal.present();
-    modal.onWillDismiss(retorno => {
-      if (retorno) {
-        this.alunos.push(retorno);
-      }
-    })
-  }
+  
 
   openMapa() {
     this.navCtrl.push(MapaPage)

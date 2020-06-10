@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>LOGIN ACADEMIA</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<div text-center class="container-form">
+  <ion-list>
+    <ion-item>
+      <ion-label>E-mail:</ion-label>
+      <ion-input placeholder="Insira seu e-mail" [(ngModel)]="usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Senha:</ion-label>
+      <ion-input placeholder="Insira sua senha" [(ngModel)]="senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button full (click)="login()">ACESSAR</button>
+    </ion-item>
+  </ion-list>
+</div>
+</ion-content>
