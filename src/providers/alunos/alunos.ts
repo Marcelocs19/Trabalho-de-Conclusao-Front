@@ -5,10 +5,14 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AlunosProvider {
 
-  url: string = 'localhost:8000';
+  url: string = 'https://sapef.herokuapp.com';
 
   constructor(public http: HttpClient) {
 
+  }
+
+  login(params) {
+    return this.http.post(this.url + '/login', params);
   }
 
   cadastrar(params) {
@@ -16,7 +20,7 @@ export class AlunosProvider {
   }
 
   listar() {
-    return this.http.get(this.url);
+    return this.http.get(this.url + '/alunos/listarAlunos');
   }
 
   editar(id, aluno) {

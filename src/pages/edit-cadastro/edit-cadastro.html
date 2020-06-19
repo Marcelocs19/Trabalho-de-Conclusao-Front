@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Edição de Aluno</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<ion-list>
+  <ion-item>
+    <ion-label>Nome:</ion-label>
+    <ion-input required [(ngModel)]="aluno.nome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Sobrenome:</ion-label>
+    <ion-input required [(ngModel)]="aluno.sobrenome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>E-mail:</ion-label>
+    <ion-input required [(ngModel)]="aluno.email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Endereço:</ion-label>
+    <ion-input required [(ngModel)]="aluno.endereco"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>CPF:</ion-label>
+    <ion-input required [(ngModel)]="aluno.cpf"></ion-input>
+  </ion-item>
+</ion-list>
+</ion-content>
+
+<ion-footer>
+  <button ion-button full (click)="atualizar()">Atualizar aluno</button>
+</ion-footer>

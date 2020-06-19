@@ -17,14 +17,22 @@
     <ion-icon name="search"></ion-icon>
   </ion-input>
   <ion-list>
-    <ion-item detail-push *ngFor="let aluno of alunos;">
-
+    <ion-item detail-push *ngFor="let aluno of alunos|filter:alunoSearch;">
+      <ion-checkbox [(ngModel)]="aluno.selected"></ion-checkbox>
+      <ion-label>
+        <h3>
+          {{aluno.nome + ' ' + aluno.sobrenome}}
+        </h3>
+        <p> {{aluno.endereco + ', ' + aluno.numero }} </p>
+      </ion-label>
+      <ion-icon name="md-create" (click)="edit(aluno)" item-end></ion-icon>
+      <ion-icon name="close" item-end (click)="remove(aluno)"></ion-icon>
     </ion-item>
   </ion-list>
   
 </ion-content>
 <ion-footer>
   <button ion-button full (click)="openMapa()">
-    ABRIR MAPA COM TRAJETO
+    CRIAR ROTA
   </button>
 </ion-footer>
