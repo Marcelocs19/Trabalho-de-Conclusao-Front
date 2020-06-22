@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cadastro de Aluno</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<ion-list>
+  <ion-item>
+    <ion-label>Nome:</ion-label>
+    <ion-input required [(ngModel)]="nome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Sobrenome:</ion-label>
+    <ion-input required [(ngModel)]="sobrenome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>E-mail:</ion-label>
+    <ion-input required [(ngModel)]="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Endereço:</ion-label>
+    <ion-input required [(ngModel)]="endereco"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>CPF:</ion-label>
+    <ion-input required [(ngModel)]="cpf"></ion-input>
+  </ion-item>
+</ion-list>
+</ion-content>
+
+<ion-footer>
+  <button ion-button full (click)="cadastrar()">Cadastrar aluno</button>
+</ion-footer>
