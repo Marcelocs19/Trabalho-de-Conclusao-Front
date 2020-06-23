@@ -44,5 +44,8 @@
         "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
       }
     }
+  },
+  "engines": {
+    "node": "10.7.0 "
   }
 }
