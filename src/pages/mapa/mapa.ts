@@ -22,8 +22,8 @@ export class MapaPage {
   ionViewDidLoad() {
     this.geolocation.getCurrentPosition().then((position: Geoposition) => {
       console.log(position)
-      const pos = new google.maps.LatLng(position.coords.latitude, position.coords.altitude);
-
+      //const pos = new google.maps.LatLng(position.coords.latitude, position.coords.altitude);
+      const pos = new google.maps.LatLng(-30.0277,-51.2287);
       const mapOptions = {
         zoom: 18,
         center: pos,

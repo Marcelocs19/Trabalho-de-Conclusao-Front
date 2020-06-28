@@ -76,7 +76,7 @@ export class HomePage {
     let selecionados = this.alunos.filter(aluno => {
       return aluno.selected;
     })
-    alert(selecionados.length);
+    //alert(selecionados.length);
     this.navCtrl.push(MapaPage)
   }
 
