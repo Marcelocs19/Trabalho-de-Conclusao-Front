@@ -23,12 +23,12 @@ export class HomePage {
   }
 
   ngOnInit() {
-    // this.alunosService.listar().subscribe((alunos: any) => {
-    //   console.log('alunos: ', alunos);
-    //   this.alunos = alunos;
-    // });
+     this.alunosService.listar().subscribe((alunos: any) => {
+       console.log('alunos: ', alunos);
+       this.alunos = alunos;
+     });
 
-    this.alunos = [{"id":1,"nome":"Fulano","sobrenome":"Da Silva","endereco":"Rua Guilherme Alves","numero":230,"cpf":"58798549065","email":"teste1@gmail.com"},{"id":2,"nome":"Beltrano","sobrenome":"Oliveria","endereco":"Av. Ipiranga","numero":7200,"cpf":"75269096056","email":"teste2@gmail.com"},{"id":3,"nome":"Ciclano","sobrenome":"Silva","endereco":"Rua Machado de Assis","numero":313,"cpf":"87521626052","email":"teste3@gmail.com"}]
+    //this.alunos = [{"id":1,"nome":"Fulano","sobrenome":"Da Silva","endereco":"Rua Guilherme Alves","numero":230,"cpf":"58798549065","email":"teste1@gmail.com"},{"id":2,"nome":"Beltrano","sobrenome":"Oliveria","endereco":"Av. Ipiranga","numero":7200,"cpf":"75269096056","email":"teste2@gmail.com"},{"id":3,"nome":"Ciclano","sobrenome":"Silva","endereco":"Rua Machado de Assis","numero":313,"cpf":"87521626052","email":"teste3@gmail.com"}]
     this.createSelects();
   }
 

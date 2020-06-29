@@ -23,7 +23,7 @@
         <h3>
           {{aluno.nome + ' ' + aluno.sobrenome}}
         </h3>
-        <p> {{aluno.endereco + ', ' + aluno.numero }} </p>
+        <p> {{aluno.endereco + ', '+ aluno.bairro +', ' + aluno.numero }} </p>
       </ion-label>
       <ion-icon name="md-create" (click)="edit(aluno)" item-end></ion-icon>
       <ion-icon name="close" item-end (click)="remove(aluno)"></ion-icon>

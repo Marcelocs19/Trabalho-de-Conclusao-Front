@@ -24,13 +24,13 @@ export class LoginPage {
   }
 
   login() {
-    // this.loginService.login({username: this.username, password: this.password})
-    // .subscribe(result => {
-    //   if (result) {
-    //     this.navCtrl.setRoot(HomePage);
-    //   }
-    // })
-    this.navCtrl.setRoot(HomePage)
+     this.loginService.login({username: this.username, password: this.password})
+     .subscribe(result => {
+       if (result) {
+         this.navCtrl.setRoot(HomePage);
+       }
+     })
+   // this.navCtrl.setRoot(HomePage)
   }
 
 }

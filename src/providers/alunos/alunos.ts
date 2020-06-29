@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
 export class AlunosProvider {
 
   url: string = 'https://sapef.herokuapp.com';
+  //url: string = 'http://localhost:8080';
 
-  constructor(public http: HttpClient) {
-
+  constructor(public http: HttpClient) {    
   }
 
   login(params) {
