@@ -2,14 +2,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Edição de Aluno</ion-title>
+    <ion-title>Edição do Aluno</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-<ion-list>
+<ion-list>  
   <ion-item>
     <ion-label>Nome:</ion-label>
     <ion-input required [(ngModel)]="aluno.nome"></ion-input>
@@ -25,6 +25,14 @@
   <ion-item>
     <ion-label>Endereço:</ion-label>
     <ion-input required [(ngModel)]="aluno.endereco"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Bairro:</ion-label>
+    <ion-input required [(ngModel)]="aluno.bairro"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Numero:</ion-label>
+    <ion-input required [(ngModel)]="aluno.numero"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>CPF:</ion-label>

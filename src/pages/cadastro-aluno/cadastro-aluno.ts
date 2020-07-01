@@ -11,6 +11,8 @@ export class CadastroAlunoPage {
   
   nome: string;
   endereco: string;
+  numero:number;
+  bairro:string;
   email: string;
   sobrenome: string;
   cpf: string;
@@ -27,6 +29,8 @@ export class CadastroAlunoPage {
       nome: this.nome,
       sobrenome: this.sobrenome, 
       endereco: this.endereco, 
+      bairro: this.bairro,
+      numero: this.numero,
       email: this.email,
       cpf: this.cpf
     }
@@ -39,6 +43,7 @@ export class CadastroAlunoPage {
     }, err => {
       console.log('erro: ', err);
     })
+    
 
   }
 

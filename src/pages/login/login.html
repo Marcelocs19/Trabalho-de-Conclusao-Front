@@ -12,11 +12,11 @@
   <ion-list>
     <ion-item>
       <ion-label>E-mail:</ion-label>
-      <ion-input placeholder="Insira seu e-mail" [(ngModel)]="usuario"></ion-input>
+      <ion-input placeholder="Insira seu e-mail" [(ngModel)]="email" value=""></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Senha:</ion-label>
-      <ion-input placeholder="Insira sua senha" [(ngModel)]="senha"></ion-input>
+      <ion-input type="password" placeholder="Insira sua senha" [(ngModel)]="senha" value=""></ion-input>
     </ion-item>
     <ion-item>
       <button ion-button full (click)="login()">ACESSAR</button>

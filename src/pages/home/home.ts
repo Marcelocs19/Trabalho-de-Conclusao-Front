@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, ModalController, LoadingController } from 'ionic-angular';
+import { Component, NgZone } from '@angular/core';
+import { NavController, ModalController, LoadingController, Refresher } from 'ionic-angular';
 import { CadastroAlunoPage } from '../cadastro-aluno/cadastro-aluno';
 import { AlunosProvider } from '../../providers/alunos/alunos';
 import { MapaPage } from '../mapa/mapa';
@@ -27,9 +27,8 @@ export class HomePage {
        console.log('alunos: ', alunos);
        this.alunos = alunos;
      });
-
-    //this.alunos = [{"id":1,"nome":"Fulano","sobrenome":"Da Silva","endereco":"Rua Guilherme Alves","numero":230,"cpf":"58798549065","email":"teste1@gmail.com"},{"id":2,"nome":"Beltrano","sobrenome":"Oliveria","endereco":"Av. Ipiranga","numero":7200,"cpf":"75269096056","email":"teste2@gmail.com"},{"id":3,"nome":"Ciclano","sobrenome":"Silva","endereco":"Rua Machado de Assis","numero":313,"cpf":"87521626052","email":"teste3@gmail.com"}]
-    this.createSelects();
+  
+   // this.createSelects();
   }
 
   createSelects() {
@@ -38,8 +37,6 @@ export class HomePage {
     })
   }
 
-
-
   openCadastro() {
     let modal = this.modalCtrl.create(CadastroAlunoPage);
     modal.present();
@@ -47,14 +44,18 @@ export class HomePage {
       if (retorno) {
         this.alunos.push(retorno);
       }
-    })
+    })   
+    
   }
 
+  
   edit(aluno) {
     let modal = this.modalCtrl.create(EditCadastroPage, {aluno: aluno});
     modal.present();
-    modal.onWillDismiss(() => {
-
+    modal.onWillDismiss(retorno => {
+      if (retorno) {
+        this.alunos.push(retorno);
+      }
     })
   }
 
