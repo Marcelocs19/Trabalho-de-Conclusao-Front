@@ -35,8 +35,10 @@ export class CadastroAlunoPage {
       cpf: this.cpf
     }
     this.alunosService.cadastrar(params).subscribe(retorno => {
+      console.log(retorno);
       if (retorno) {
         this.viewCtrl.dismiss(retorno);
+        
       } else {
         this.viewCtrl.dismiss()
       }

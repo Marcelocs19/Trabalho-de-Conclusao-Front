@@ -28,7 +28,7 @@ export class HomePage {
        this.alunos = alunos;
      });
   
-   // this.createSelects();
+   this.createSelects();
   }
 
   createSelects() {
