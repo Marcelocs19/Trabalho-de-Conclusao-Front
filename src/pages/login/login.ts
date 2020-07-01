@@ -3,15 +3,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { AlunosProvider } from '../../providers/alunos/alunos';
 
-@IonicPage()
+//@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
 
-  username: string;
-  password: string;
+  email: string;
+  senha: string;
 
   constructor(
     public navCtrl: NavController, 
@@ -19,18 +19,18 @@ export class LoginPage {
     public loginService: AlunosProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
+  //ionViewDidLoad() {
+    //console.log('ionViewDidLoad LoginPage');
+  //}
 
   login() {
-     this.loginService.login({username: this.username, password: this.password})
-     .subscribe(result => {
-       if (result) {
-         this.navCtrl.setRoot(HomePage);
-       }
-     })
-   // this.navCtrl.setRoot(HomePage)
+     //this.loginService.login({email: this.email, senha: this.senha})
+     //.subscribe(result => {
+       //if (result) {
+         //this.navCtrl.setRoot(HomePage);
+       //}
+     //})
+   this.navCtrl.setRoot(HomePage)
   }
 
 }
