@@ -1,10 +1,11 @@
 {
-  "name": "blank",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
+  "name": "sapef-pucrs",
+  "version": "1.0.0",
+  "author": "Marcelo Campos Silva",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
+    "start": "ionic serve",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
@@ -28,6 +29,8 @@
     "cordova-plugin-geolocation": "4.0.2",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "leaflet": "^1.6.0",
+    "leaflet-routing-machine": "^3.2.12",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
     "ws": "^3.3.2",
