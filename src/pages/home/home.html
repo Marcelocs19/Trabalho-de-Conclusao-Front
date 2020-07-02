@@ -11,8 +11,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <button ion-button (click)="teste()">add</button>
+<ion-content padding>  
   <h2>Lista de alunos:</h2>
   <ion-input placeholder="Filtrar aluno..." [(ngModel)]="alunoSearch" (ngModelChange)="filter($event)">
     <ion-icon name="search"></ion-icon>
