@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AlunosProvider {
 
-  url: string = 'https://sapef.herokuapp.com';
-  //url: string = 'http://localhost:8080';
+  //url: string = 'https://sapef.herokuapp.com';
+  url: string = 'http://localhost:8080'; 
 
   constructor(public http: HttpClient) {    
   }

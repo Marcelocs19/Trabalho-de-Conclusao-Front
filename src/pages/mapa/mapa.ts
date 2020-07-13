@@ -120,7 +120,7 @@ export class MapaPage {
     }).on('locationfound', (e) => {
       console.log('achei', e)
       this.ajustarPosicaoAtual({ lat: e.latitude, lng: e.longitude })
-        .then(() => {
+         .then(() => {
           this.waypoints.push(L.latLng(e.latitude, e.longitude))
           this.transformAddress().then(retorno => {
             retorno.forEach(ret => this.waypoints.push(ret))
@@ -129,7 +129,7 @@ export class MapaPage {
             //console.log(a);
             this.ajustarControlRouting()
           });
-        });
+        }); 
 
     }).on('locationerror', (err) => {
       alert(err.message);
