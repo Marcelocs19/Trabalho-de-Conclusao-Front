@@ -24,16 +24,21 @@
   </ion-item>
   <ion-item>
     <ion-label>Endereço:</ion-label>
-    <ion-input required [(ngModel)]="endereco"></ion-input>
+    <ion-input required [(ngModel)]="endereco" (ionChange)="updateSearchResults()"></ion-input>
   </ion-item>
+  <ion-item *ngFor="let item of autoCompleteItems" tappable (click)="selectAddress(item)"
+      [hidden]="autoCompleteItems.length == 0 || selecionouEnd">
+      {{ item.description }}
+    </ion-item>
+    <ion-item>
+      <ion-label>Numero:</ion-label>
+      <ion-input disabled required [(ngModel)]="numero"></ion-input>
+    </ion-item>
   <ion-item>
     <ion-label>Bairro:</ion-label>
-    <ion-input required [(ngModel)]="bairro"></ion-input>
+    <ion-input required disabled [(ngModel)]="bairro"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label>Numero:</ion-label>
-    <ion-input required [(ngModel)]="numero"></ion-input>
-  </ion-item>
+  
   <ion-item>
     <ion-label>CPF:</ion-label>
     <ion-input required [(ngModel)]="cpf"></ion-input>

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class AlunosProvider {
 
   //url: string = 'https://sapef.herokuapp.com';
-  url: string = 'http://localhost:8080';
+  url: string = 'http://localhost:8080'; 
 
   constructor(public http: HttpClient) {    
   }
@@ -25,11 +25,16 @@ export class AlunosProvider {
   }
 
   editar(id, aluno) {
-    return this.http.put(`${this.url + '/alunos/editar/'}/${id}`, aluno);
+    return this.http.put(`${this.url + '/alunos/editar/'}${id}`, aluno);
   }
 
   remover(id) {
-    return this.http.delete(`${this.url + '/alunos/excluir/'}/${id}`)
+    return this.http.delete(`${this.url + '/alunos/excluir/'}${id}`)
+  }
+
+
+  getCoords(address) {
+    return this.http.get(`http://nominatim.openstreetmap.org/search?format=json&q='${address}`)
   }
 
 }

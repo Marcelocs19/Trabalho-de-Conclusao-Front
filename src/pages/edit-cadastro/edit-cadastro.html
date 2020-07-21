@@ -1,7 +1,11 @@
-
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons left>
+      <button (click)="closeModal()" ion-button clear>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Edição do Aluno</ion-title>
   </ion-navbar>
 
@@ -9,36 +13,41 @@
 
 
 <ion-content>
-<ion-list>  
-  <ion-item>
-    <ion-label>Nome:</ion-label>
-    <ion-input required [(ngModel)]="aluno.nome"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Sobrenome:</ion-label>
-    <ion-input required [(ngModel)]="aluno.sobrenome"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>E-mail:</ion-label>
-    <ion-input required [(ngModel)]="aluno.email"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Endereço:</ion-label>
-    <ion-input required [(ngModel)]="aluno.endereco"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Bairro:</ion-label>
-    <ion-input required [(ngModel)]="aluno.bairro"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Numero:</ion-label>
-    <ion-input required [(ngModel)]="aluno.numero"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>CPF:</ion-label>
-    <ion-input required [(ngModel)]="aluno.cpf"></ion-input>
-  </ion-item>
-</ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>Nome:</ion-label>
+      <ion-input required [(ngModel)]="alunoSelecionado.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Sobrenome:</ion-label>
+      <ion-input required [(ngModel)]="alunoSelecionado.sobrenome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>E-mail:</ion-label>
+      <ion-input required [(ngModel)]="alunoSelecionado.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Endereço:</ion-label>
+      <ion-input required [(ngModel)]="alunoSelecionado.endereco" (ionChange)="updateSearchResults()"></ion-input>
+    </ion-item>
+    <ion-item *ngFor="let item of autoCompleteItems" tappable (click)="selectAddress(item)"
+      [hidden]="autoCompleteItems.length == 0 || selecionouEnd">
+      {{ item.description }}
+    </ion-item>
+    <ion-item>
+      <ion-label>Numero:</ion-label>
+      <ion-input disabled required [(ngModel)]="alunoSelecionado.numero"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Bairro:</ion-label>
+      <ion-input disabled required [(ngModel)]="alunoSelecionado.bairro"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>CPF:</ion-label>
+      <ion-input required [(ngModel)]="alunoSelecionado.cpf"></ion-input>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 <ion-footer>

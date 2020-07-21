@@ -11,22 +11,22 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding>  
   <h2>Lista de alunos:</h2>
-  <ion-input placeholder="Filtrar aluno..." [(ngModel)]="alunoSearch">
+  <ion-input placeholder="Filtrar aluno..." [(ngModel)]="alunoSearch" (ngModelChange)="filter($event)">
     <ion-icon name="search"></ion-icon>
   </ion-input>
   <ion-list>
-    <ion-item detail-push *ngFor="let aluno of alunos|filter:alunoSearch;">
-      <ion-checkbox [(ngModel)]="aluno.selected"></ion-checkbox>
+    <ion-item  detail-push *ngFor="let aluno of alunos; let i = index" (click)="toggleSelect(aluno.id, i)">
+      <ion-checkbox disabled [(ngModel)]="aluno.selected"></ion-checkbox>
       <ion-label>
         <h3>
           {{aluno.nome + ' ' + aluno.sobrenome}}
         </h3>
         <p> {{aluno.endereco + ', '+ aluno.bairro +', ' + aluno.numero }} </p>
       </ion-label>
-      <ion-icon style="z-index:99999" name="md-create" (click)="edit(aluno)" item-end></ion-icon>
-      <ion-icon style="z-index:99999" name="close" (click)="remove(aluno)" item-end></ion-icon>      
+      <ion-icon style="z-index: 99999;" name="md-create" (click)="edit(aluno)" item-end></ion-icon>
+      <ion-icon style="z-index: 99999;" name="close"  (click)="remove(aluno)" item-end></ion-icon>
     </ion-item>
   </ion-list>
   
